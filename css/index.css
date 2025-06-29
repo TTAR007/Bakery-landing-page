@@ -488,6 +488,19 @@ nav ul a:hover {
   color: #E26EE5;
 }
 
+footer {
+  padding-block: 1rem;
+}
+footer p {
+  text-align: center;
+}
+footer p a {
+  color: darkblue;
+}
+footer p a:hover {
+  text-decoration: underline;
+}
+
 @media (min-width: 37.5rem) {
   .cards-grid {
     grid-template-columns: repeat(2, 1fr);
