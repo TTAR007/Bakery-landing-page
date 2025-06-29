@@ -19,6 +19,7 @@ img {
 
 a {
   text-decoration: none;
+  text-align: center;
 }
 
 .cards-grid {
@@ -50,7 +51,7 @@ a {
   cursor: pointer;
 }
 .hamburger-menu_box:hover div {
-  background-color: #6F4E37;
+  background-color: #A67B5B;
 }
 
 header {
@@ -65,7 +66,7 @@ header {
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 12px;
 }
 header button {
   padding: 0.8rem;
@@ -129,6 +130,7 @@ nav {
   width: 12.5rem;
   padding: 32px;
   box-shadow: 10px 0 20px rgba(0, 0, 0, 0.3);
+  display: none;
 }
 nav .close-button_box {
   border-radius: 50%;
@@ -180,8 +182,12 @@ nav ul a:hover {
   text-decoration: underline;
 }
 
+.open {
+  display: block;
+}
+
 .cookies_box {
-  background-color: orange;
+  background-color: #EF9651;
   padding: 2rem;
   border-radius: 50px;
   display: grid;
@@ -192,12 +198,31 @@ nav ul a:hover {
   max-width: 600px;
   margin: 0 auto;
 }
-.cookies_box .name-text {
+.cookies_box .matcha-bun-image {
+  display: none;
+}
+.cookies_box .show-matcha-bun {
+  display: block;
+}
+.cookies_box .undisplay-cookies {
+  display: none;
+}
+.cookies_box .name-text-cookies,
+.cookies_box .name-text-matcha {
   font-family: "Luckiest Guy", sans-serif;
   font-size: clamp(2.5rem, 1.3rem + 5.12vw, 4.5rem);
   width: fit-content;
   margin: 0 auto;
   font-weight: 500;
+}
+.cookies_box .name-text-matcha {
+  display: none;
+}
+.cookies_box .show-matcha-name {
+  display: block;
+}
+.cookies_box .undisplay-cookies-name {
+  display: none;
 }
 .cookies_box .price_box {
   position: absolute;
@@ -242,13 +267,25 @@ nav ul a:hover {
   border: 2px solid rgba(0, 0, 0, 0.4);
   border-radius: 30%;
 }
-.cookies_box .bottom-section .bakery-image_box img:nth-child(1) {
+.cookies_box .bottom-section .bakery-image_box img:hover {
+  border: 2px solid #FED8B1;
+  cursor: pointer;
+}
+.cookies_box .bottom-section .bakery-image_box .cookies {
   border-color: white;
   background-color: rgba(255, 255, 255, 0.5);
 }
+.cookies_box .bottom-section .bakery-image_box .change-to-matcha {
+  border-color: white;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+.cookies_box .bottom-section .bakery-image_box .reset-cookies {
+  border-color: rgba(0, 0, 0, 0.4);
+  background: none;
+}
 
 .top-pick_box {
-  background-color: burlywood;
+  background-color: #A19AD3;
   padding: 2rem;
   border-radius: 50px;
 }
@@ -261,14 +298,13 @@ nav ul a:hover {
 
 .bakery-section {
   display: grid;
-  gap: 1rem;
+  gap: 16px;
 }
 .bakery-section p {
   font-size: 1.125rem;
 }
 .bakery-section hr {
-  border: none;
-  border-top: 2px solid black;
+  border: 1px solid black;
 }
 
 .bakery-each_box {
@@ -308,20 +344,21 @@ nav ul a:hover {
   text-align: center;
 }
 .bakery-each_box .back-section button {
-  width: 30px;
-  height: 30px;
+  width: 40px;
+  height: 40px;
   border: none;
   border-radius: 8px;
   position: relative;
+  background-color: #3F7D58;
 }
 .bakery-each_box .back-section button div {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 2px;
+  width: 3px;
   height: 18px;
   border-radius: 8px;
-  background-color: black;
+  background-color: yellow;
   transform-origin: center;
 }
 .bakery-each_box .back-section button div:nth-child(1) {
@@ -330,9 +367,19 @@ nav ul a:hover {
 .bakery-each_box .back-section button div:nth-child(2) {
   transform: translate(-50%, -50%);
 }
+.bakery-each_box .back-section button:hover {
+  background-color: #FED8B1;
+  cursor: pointer;
+}
+.bakery-each_box .back-section button:hover div {
+  background-color: #3F7D58;
+}
+.bakery-each_box .back-section button:active {
+  opacity: 0.5;
+}
 
 .school_box {
-  background-color: lightcoral;
+  background-color: #008DDA;
   padding: 2rem;
   position: relative;
   overflow: hidden;
@@ -370,13 +417,18 @@ nav ul a:hover {
 .school_box a {
   position: absolute;
   font-weight: 600;
-  font-size: 1.125rem;
+  font-size: 1.5rem;
   bottom: 32px;
   left: 50%;
   transform: translateX(-50%);
   padding: 0.5rem 1.5rem;
-  background-color: lightgreen;
+  background-color: #3F7D58;
+  color: #FED8B1;
   border-radius: 2rem;
+}
+.school_box a:hover {
+  background-color: lightblue;
+  color: #6F4E37;
 }
 
 .everyday_box {
@@ -384,7 +436,7 @@ nav ul a:hover {
   border-radius: 50px;
   padding: 2rem;
   display: grid;
-  align-items: start;
+  align-items: center;
 }
 .everyday_box h2 {
   font-size: clamp(2.5rem, 1.9rem + 2.56vw, 3.5rem);
@@ -418,6 +470,22 @@ nav ul a:hover {
 .everyday_box p {
   text-align: center;
   font-size: 1.125rem;
+}
+.everyday_box a {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%);
+  font-weight: 600;
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+  background-color: #6F4E37;
+  color: #FED8B1;
+  border-radius: 2rem;
+}
+.everyday_box a:hover {
+  background-color: #FED8B1;
+  color: #E26EE5;
 }
 
 @media (min-width: 37.5rem) {
@@ -454,6 +522,11 @@ nav ul a:hover {
   }
   .top-pick_box {
     display: flex;
+    gap: 16px;
+    align-items: start;
+  }
+  .top-pick_box h2 {
+    margin: 0;
   }
   .top-pick_box .bakery-each_box {
     flex-direction: row;

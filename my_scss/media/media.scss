@@ -54,6 +54,12 @@
     //top-pick
     .top-pick_box {
         display: flex;
+        gap: 16px;
+        align-items: start;
+
+        h2 {
+            margin: 0;
+        }
 
         .bakery-each_box {
             flex-direction: row;

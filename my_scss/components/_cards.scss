@@ -4,7 +4,7 @@
 
 // cookies card
 .cookies_box {
-    background-color: orange;
+    background-color: $light-orange;
     padding: 2rem;
     border-radius: 50px;
     display: grid;
@@ -16,12 +16,39 @@
         margin: 0 auto;
     }
 
-    .name-text {
+    .matcha-bun-image {
+        display: none;
+    }
+
+    // for js
+    .show-matcha-bun {
+        display: block;
+    }
+
+    .undisplay-cookies {
+        display: none;
+    }
+
+    .name-text-cookies,
+    .name-text-matcha {
         font-family: "Luckiest Guy", sans-serif;
         font-size: clamp(2.5rem, 1.3rem + 5.12vw, 4.5rem);
         width: fit-content;
         margin: 0 auto;
         font-weight: 500;
+    }
+
+    .name-text-matcha {
+        display: none;
+    }
+
+    // for js
+    .show-matcha-name {
+        display: block;
+    }
+
+    .undisplay-cookies-name {
+        display: none;
     }
 
     .price_box {
@@ -72,9 +99,25 @@
                 border-radius: 30%;
             }
 
-            img:nth-child(1) {
+            img:hover {
+                border: 2px solid $light-cream;
+                cursor: pointer;
+            }
+
+            .cookies {
                 border-color: white;
                 background-color: rgba(255, 255, 255, 0.5);
+            }
+
+            // for js
+            .change-to-matcha {
+                border-color: white;
+                background-color: rgba(255, 255, 255, 0.5);
+            }
+
+            .reset-cookies {
+                border-color: rgba(0, 0, 0, 0.4);
+                background: none;
             }
         }
     }
@@ -82,7 +125,7 @@
 
 // top picks
 .top-pick_box {
-    background-color: burlywood;
+    background-color: $light-blue;
     padding: 2rem;
     border-radius: 50px;
 
@@ -96,15 +139,14 @@
 
 .bakery-section {
     display: grid;
-    gap: 1rem;
+    gap: 16px;
 
     p {
         font-size: rem(18);
     }
 
     hr {
-        border: none;
-        border-top: 2px solid black;
+        border: 1px solid black;
     }
 }
 
@@ -152,20 +194,21 @@
         }
 
         button {
-            width: 30px;
-            height: 30px;
+            width: 40px;
+            height: 40px;
             border: none;
             border-radius: 8px;
             position: relative;
+            background-color: $dark-green;
 
             div {
                 position: absolute;
                 top: 50%;
                 left: 50%;
-                width: 2px;
+                width: 3px;
                 height: 18px;
                 border-radius: 8px;
-                background-color: black;
+                background-color: yellow;
                 transform-origin: center;
             }
 
@@ -177,12 +220,25 @@
                 transform: translate(-50%, -50%);
             }
         }
+
+        button:hover {
+            background-color: $light-cream;
+            cursor: pointer;
+
+            div {
+                background-color: $dark-green;
+            }
+        }
+
+        button:active {
+            opacity: 0.5;
+        }
     }
 }
 
 // school
 .school_box {
-    background-color: lightcoral;
+    background-color: $blue;
     padding: 2rem;
     position: relative;
     overflow: hidden;
@@ -224,13 +280,19 @@
     a {
         position: absolute;
         font-weight: 600;
-        font-size: rem(18);
+        font-size: rem(24);
         bottom: 32px;
         left: 50%;
         transform: translateX(-50%);
         padding: 0.5rem 1.5rem;
-        background-color: lightgreen;
+        background-color: $dark-green;
+        color: $light-cream;
         border-radius: 2rem;
+    }
+
+    a:hover {
+        background-color: lightblue;
+        color: $dark-brown;
     }
 }
 
@@ -240,7 +302,7 @@
     border-radius: 50px;
     padding: 2rem;
     display: grid;
-    align-items: start;
+    align-items: center;
 
     h2 {
         font-size: clamp(2.5rem, 1.9rem + 2.56vw, 3.5rem);
@@ -279,5 +341,23 @@
     p {
         text-align: center;
         font-size: rem(18);
+    }
+
+    a {
+        position: absolute;
+        left: 50%;
+        top: 0;
+        transform: translateX(-50%);
+        font-weight: 600;
+        font-size: rem(24);
+        padding: 0.5rem 1rem;
+        background-color: $dark-brown;
+        color: $light-cream;
+        border-radius: 2rem;
+    }
+
+    a:hover {
+        background-color: $light-cream;
+        color: $violet;
     }
 }

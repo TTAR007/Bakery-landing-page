@@ -11,7 +11,7 @@ nav {
     width: rem(200);
     padding: 32px;
     box-shadow: 10px 0 20px rgba(0, 0, 0, 0.3);
-    // display: none;
+    display: none;
 
     // close button
     .close-button_box {
@@ -71,4 +71,8 @@ nav {
             text-decoration: underline;
         }
     }
+}
+
+.open {
+    display: block;
 }

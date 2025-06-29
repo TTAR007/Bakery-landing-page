@@ -34,6 +34,11 @@
   }
   .top-pick_box {
     display: flex;
+    gap: 16px;
+    align-items: start;
+  }
+  .top-pick_box h2 {
+    margin: 0;
   }
   .top-pick_box .bakery-each_box {
     flex-direction: row;
