@@ -1,0 +1,488 @@
+@import url("https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Big+Shoulders:opsz,wght@10..72,100..900&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Figtree:ital,wght@0,300..900;1,300..900&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Karla:ital,wght@0,200..800;1,200..800&family=Kumbh+Sans:wght@100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=League+Spartan:wght@100..900&family=Lexend+Deca:wght@100..900&family=M+PLUS+Rounded+1c&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Young+Serif&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bai+Jamjuree:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600;1,700&family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Big+Shoulders:opsz,wght@10..72,100..900&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Figtree:ital,wght@0,300..900;1,300..900&family=Fraunces:ital,opsz,wght@0,9..144,100..900;1,9..144,100..900&family=Hanken+Grotesk:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Karla:ital,wght@0,200..800;1,200..800&family=Kumbh+Sans:wght@100..900&family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=League+Spartan:wght@100..900&family=Lexend+Deca:wght@100..900&family=Luckiest+Guy&family=M+PLUS+Rounded+1c&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Red+Hat+Display:ital,wght@0,300..900;1,300..900&family=Rubik:ital,wght@0,300..900;1,300..900&family=Young+Serif&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  background-color: #F8EDE3;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
+.cards-grid {
+  display: grid;
+  gap: 8px;
+}
+
+.wrap {
+  padding: 1rem;
+  max-width: 1400px;
+  margin: 0 auto;
+  min-width: 320px;
+}
+
+.hamburger-menu_box {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: fit-content;
+}
+.hamburger-menu_box div {
+  border-radius: 4px;
+  width: 30px;
+  height: 5px;
+  background-color: #6F4E37;
+}
+
+.hamburger-menu_box:hover {
+  cursor: pointer;
+}
+.hamburger-menu_box:hover div {
+  background-color: #6F4E37;
+}
+
+header {
+  z-index: 999;
+  position: sticky;
+  top: 0;
+  right: 0;
+  left: 0;
+  background-color: #F8EDE3;
+  padding-block: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+header button {
+  padding: 0.8rem;
+  border: none;
+  border-radius: 80% 10px 80% 10px;
+  font-size: 24px;
+  font-family: "Luckiest Guy", sans-serif;
+  position: relative;
+  background-color: #6F4E37;
+  color: #FED8B1;
+}
+header button p {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  border-radius: 50%;
+  padding: 2px;
+  font-weight: 500;
+  line-height: 100%;
+  background-color: black;
+  color: #F8EDE3;
+  position: absolute;
+  top: -8px;
+  right: 0;
+}
+header button:hover {
+  color: #6F4E37;
+  background-color: #ECB176;
+  cursor: pointer;
+}
+
+.left-section {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.left-section figure img {
+  width: 48px;
+  border-radius: 50%;
+}
+.left-section .logo-title_box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+.left-section .logo-title_box:hover {
+  cursor: pointer;
+}
+.left-section .shop-title {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+nav {
+  z-index: 999;
+  background-color: #F8EDE3;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 12.5rem;
+  padding: 32px;
+  box-shadow: 10px 0 20px rgba(0, 0, 0, 0.3);
+}
+nav .close-button_box {
+  border-radius: 50%;
+  background-color: #FED8B1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 56px;
+  margin-inline-start: auto;
+}
+nav .close-button_box div {
+  width: 4px;
+  height: 28px;
+  background-color: black;
+  transform-origin: center;
+  border-radius: 4px;
+}
+nav .close-button_box div:nth-child(1) {
+  transform: translateY(50%) rotate(45deg);
+}
+nav .close-button_box div:nth-child(2) {
+  transform: translateY(-50%) rotate(-45deg);
+}
+nav .close-button_box:hover {
+  cursor: pointer;
+  background-color: #ECB176;
+}
+nav .close-button_box:hover div {
+  background-color: #FED8B1;
+}
+nav ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  align-items: end;
+  margin-block-start: 2rem;
+}
+nav ul a {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: black;
+  padding: 4px 8px;
+  border-radius: 16px;
+}
+nav ul a:hover {
+  background-color: #6F4E37;
+  color: #FED8B1;
+  text-decoration: underline;
+}
+
+.cookies_box {
+  background-color: orange;
+  padding: 2rem;
+  border-radius: 50px;
+  display: grid;
+  align-items: end;
+}
+.cookies_box .main_image_box {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.cookies_box .name-text {
+  font-family: "Luckiest Guy", sans-serif;
+  font-size: clamp(2.5rem, 1.3rem + 5.12vw, 4.5rem);
+  width: fit-content;
+  margin: 0 auto;
+  font-weight: 500;
+}
+.cookies_box .price_box {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #6F4E37;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cookies_box .price_box p {
+  text-align: center;
+  font-weight: 600;
+  color: white;
+  font-size: 1.5rem;
+}
+.cookies_box .price_box span {
+  display: block;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #ECB176;
+}
+.cookies_box .bottom-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+.cookies_box .bottom-section .inviting-text {
+  font-size: 1.125rem;
+}
+.cookies_box .bottom-section .bakery-image_box {
+  display: flex;
+  gap: 8px;
+}
+.cookies_box .bottom-section .bakery-image_box img {
+  width: 48px;
+  border: 2px solid rgba(0, 0, 0, 0.4);
+  border-radius: 30%;
+}
+.cookies_box .bottom-section .bakery-image_box img:nth-child(1) {
+  border-color: white;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.top-pick_box {
+  background-color: burlywood;
+  padding: 2rem;
+  border-radius: 50px;
+}
+.top-pick_box h2 {
+  font-family: "Luckiest Guy", sans-serif;
+  font-weight: 500;
+  font-size: clamp(2.5rem, 1.9rem + 2.56vw, 3.5rem);
+  margin-block-end: 1rem;
+}
+
+.bakery-section {
+  display: grid;
+  gap: 1rem;
+}
+.bakery-section p {
+  font-size: 1.125rem;
+}
+.bakery-section hr {
+  border: none;
+  border-top: 2px solid black;
+}
+
+.bakery-each_box {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.bakery-each_box img {
+  width: 48px;
+  background-color: white;
+  border-radius: 16px;
+  padding: 4px;
+}
+.bakery-each_box .front-section,
+.bakery-each_box .back-section {
+  display: flex;
+  align-items: center;
+}
+.bakery-each_box .front-section {
+  gap: 8px;
+}
+.bakery-each_box .front-section .name {
+  font-weight: 600;
+}
+.bakery-each_box .middle-text {
+  line-height: 110%;
+}
+.bakery-each_box .back-section {
+  gap: 8px;
+  justify-content: end;
+}
+.bakery-each_box .back-section .price {
+  font-weight: 600;
+}
+.bakery-each_box .back-section .price span {
+  display: block;
+  text-align: center;
+}
+.bakery-each_box .back-section button {
+  width: 30px;
+  height: 30px;
+  border: none;
+  border-radius: 8px;
+  position: relative;
+}
+.bakery-each_box .back-section button div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 2px;
+  height: 18px;
+  border-radius: 8px;
+  background-color: black;
+  transform-origin: center;
+}
+.bakery-each_box .back-section button div:nth-child(1) {
+  transform: translate(-50%, -50%) rotate(90deg);
+}
+.bakery-each_box .back-section button div:nth-child(2) {
+  transform: translate(-50%, -50%);
+}
+
+.school_box {
+  background-color: lightcoral;
+  padding: 2rem;
+  position: relative;
+  overflow: hidden;
+  border-radius: 50px;
+  display: grid;
+}
+.school_box p {
+  text-align: center;
+  font-size: 1.125rem;
+}
+.school_box h2 {
+  font-family: "Luckiest Guy", sans-serif;
+  font-size: clamp(2.5rem, 1.9rem + 2.56vw, 3.5rem);
+  width: fit-content;
+  margin: 0 auto;
+  font-weight: 500;
+  margin-block-end: 0.5rem;
+}
+.school_box .image-container {
+  max-width: 600px;
+  transform: translateY(35px);
+  margin-block-start: -30px;
+  margin-inline: auto;
+  position: relative;
+}
+.school_box .baker-name {
+  position: absolute;
+  top: 40%;
+  left: 0;
+  color: white;
+  transform-origin: center;
+  transform: rotate(-45deg);
+  font-weight: 600;
+}
+.school_box a {
+  position: absolute;
+  font-weight: 600;
+  font-size: 1.125rem;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.5rem 1.5rem;
+  background-color: lightgreen;
+  border-radius: 2rem;
+}
+
+.everyday_box {
+  background-color: lightseagreen;
+  border-radius: 50px;
+  padding: 2rem;
+  display: grid;
+  align-items: start;
+}
+.everyday_box h2 {
+  font-size: clamp(2.5rem, 1.9rem + 2.56vw, 3.5rem);
+  font-family: "Luckiest Guy", sans-serif;
+  font-weight: 500;
+  width: fit-content;
+  margin: 0 auto;
+}
+.everyday_box .image-container {
+  position: relative;
+  max-width: 600px;
+  margin: 0 auto;
+}
+.everyday_box .price {
+  background-color: #6F4E37;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  bottom: 5%;
+  right: 5%;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+}
+.everyday_box .price p {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #ECB176;
+}
+.everyday_box p {
+  text-align: center;
+  font-size: 1.125rem;
+}
+
+@media (min-width: 37.5rem) {
+  .cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .cards-grid .top-pick_box {
+    grid-column: 1/3;
+  }
+  .cards-grid .everyday_box {
+    grid-row: 1;
+    grid-column: 2;
+  }
+  .cards-grid .school_box {
+    grid-column: 1/3;
+  }
+}
+@media (min-width: 62.5rem) {
+  .cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas: "cookie cookie school" "cookie cookie everyday" "toppic toppic everyday";
+  }
+  .cards-grid .cookies_box {
+    grid-area: cookie;
+  }
+  .cards-grid .school_box {
+    grid-area: school;
+  }
+  .cards-grid .top-pick_box {
+    grid-area: toppic;
+  }
+  .cards-grid .everyday_box {
+    grid-area: everyday;
+  }
+  .top-pick_box {
+    display: flex;
+  }
+  .top-pick_box .bakery-each_box {
+    flex-direction: row;
+    align-items: center;
+    gap: 30px;
+    justify-content: space-between;
+  }
+  .hamburger-menu_box {
+    display: none;
+  }
+  nav {
+    display: block;
+    position: static;
+    width: fit-content;
+    padding: 0;
+    background: none;
+    box-shadow: none;
+  }
+  nav .close-button_box {
+    display: none;
+  }
+  nav ul {
+    flex-direction: row;
+    margin: 0;
+    align-items: center;
+    gap: 48px;
+  }
+  nav ul a {
+    font-size: 1rem;
+    font-weight: 500;
+  }
+}

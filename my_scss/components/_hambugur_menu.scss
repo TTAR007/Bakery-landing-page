@@ -1,0 +1,24 @@
+@use '../variables' as *;
+@use '../functions' as *;
+
+.hamburger-menu_box {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: fit-content;
+
+    div {
+        border-radius: 4px;
+        width: 30px;
+        height: 5px;
+        background-color: $dark-brown;
+    }
+}
+
+.hamburger-menu_box:hover {
+    cursor: pointer;
+
+    div {
+        background-color: $dark-brown;
+    }
+}

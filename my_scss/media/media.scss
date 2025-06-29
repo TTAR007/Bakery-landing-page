@@ -1,0 +1,96 @@
+@use '../variables' as *;
+@use '../functions' as *;
+
+@media (min-width: rem(600)) {
+    
+    // card grid
+    .cards-grid {
+        grid-template-columns: repeat(2, 1fr);
+
+        .top-pick_box {
+            grid-column: 1 / 3;
+        }
+
+        .everyday_box {
+            grid-row: 1;
+            grid-column: 2;
+        }
+
+        .school_box {
+            grid-column: 1 / 3;
+        }
+    }
+}
+
+@media (min-width: rem(1000)) {
+
+    // card grid
+    .cards-grid {
+        grid-template-columns: repeat(3, 1fr);
+
+        grid-template-areas:
+        'cookie cookie school'
+        'cookie cookie everyday'
+        'toppic toppic everyday'
+        ;
+
+        .cookies_box {
+            grid-area: cookie;
+        }
+
+        .school_box {
+            grid-area: school;
+        }
+
+        .top-pick_box {
+            grid-area: toppic;
+        }
+
+        .everyday_box {
+            grid-area: everyday;
+        }
+    }
+
+    //top-pick
+    .top-pick_box {
+        display: flex;
+
+        .bakery-each_box {
+            flex-direction: row;
+            align-items: center;
+            gap: 30px;
+            justify-content: space-between;
+        }
+    }
+
+    //nav bar
+    .hamburger-menu_box {
+        display: none;
+    }
+
+    nav {
+        display: block;
+        position: static;
+        width: fit-content;
+        padding: 0;
+        background: none;
+        box-shadow: none;
+
+        .close-button_box {
+            display: none;
+        }
+
+        //list
+        ul {
+            flex-direction: row;
+            margin: 0;
+            align-items: center;
+            gap: 48px;
+
+            a {
+                font-size: rem(16);
+                font-weight: 500;
+            }
+        }
+    }
+}

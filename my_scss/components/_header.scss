@@ -1,0 +1,79 @@
+@use '../variables' as *;
+@use '../functions' as *;
+
+header {
+    z-index: 999;
+    position: sticky;
+    top: 0;
+    right: 0;
+    left: 0;
+    background-color: $white-smoke;
+    padding-block: 1rem;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+
+    button {
+        padding: 0.8rem;
+        border: none;
+        border-radius: 80% 10px 80% 10px;
+        font-size: 24px;
+        font-family: 'Luckiest Guy', sans-serif;
+        position: relative;
+        background-color: $dark-brown;
+        color: $light-cream;
+        
+        p {
+            font-family: 'M PLUS Rounded 1c', sans-serif;
+            border-radius: 50%;
+            padding: 2px;
+            font-weight: 500;
+            line-height: 100%;
+            background-color: black;
+            color: $white-smoke;
+            position: absolute;
+            top: -8px;
+            right: 0;
+        }
+    }
+
+    button:hover {
+        color: $dark-brown;
+        background-color: $dark-cream;
+        cursor: pointer;
+    }
+}
+
+.left-section {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+
+
+    figure {
+        img {
+            width: 48px;
+            border-radius: 50%;
+        }
+    }
+
+    .logo-title_box {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+
+    .logo-title_box:hover {
+        cursor: pointer;
+    }
+
+    .shop-title {
+        font-size: 18px;
+        font-weight: 600;
+    }
+}

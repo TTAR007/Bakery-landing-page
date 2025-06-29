@@ -1,0 +1,283 @@
+@use '../variables' as *;
+@use '../functions' as *;
+
+
+// cookies card
+.cookies_box {
+    background-color: orange;
+    padding: 2rem;
+    border-radius: 50px;
+    display: grid;
+    align-items: end;
+
+    .main_image_box {
+        position: relative;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .name-text {
+        font-family: "Luckiest Guy", sans-serif;
+        font-size: clamp(2.5rem, 1.3rem + 5.12vw, 4.5rem);
+        width: fit-content;
+        margin: 0 auto;
+        font-weight: 500;
+    }
+
+    .price_box {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: $dark-brown;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        p {
+            text-align: center;
+            font-weight: 600;
+            color: white;
+            font-size: rem(24);
+        }
+
+        span {
+            display: block;
+            font-size: rem(32);
+            font-weight: 600;
+            color: $dark-cream;
+        }
+    }
+
+    .bottom-section {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+
+        .inviting-text {
+            font-size: rem(18);
+        }
+
+        .bakery-image_box {
+            display: flex;
+            gap: 8px;
+
+            img {
+                width: 48px;
+                border: 2px solid rgba(0, 0, 0, 0.4);
+                border-radius: 30%;
+            }
+
+            img:nth-child(1) {
+                border-color: white;
+                background-color: rgba(255, 255, 255, 0.5);
+            }
+        }
+    }
+}
+
+// top picks
+.top-pick_box {
+    background-color: burlywood;
+    padding: 2rem;
+    border-radius: 50px;
+
+    h2 {
+        font-family: "Luckiest Guy", sans-serif;
+        font-weight: 500;
+        font-size: clamp(2.5rem, 1.9rem + 2.56vw, 3.5rem);
+        margin-block-end: 1rem;
+    }
+}
+
+.bakery-section {
+    display: grid;
+    gap: 1rem;
+
+    p {
+        font-size: rem(18);
+    }
+
+    hr {
+        border: none;
+        border-top: 2px solid black;
+    }
+}
+
+.bakery-each_box {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+
+    img {
+        width: 48px;
+        background-color: white;
+        border-radius: 16px;
+        padding: 4px;
+    }
+
+    .front-section,
+    .back-section {
+        display: flex;
+        align-items: center;
+    }
+
+    .front-section {
+        gap: 8px;
+
+        .name {
+            font-weight: 600;
+        }
+    }
+
+    .middle-text {
+        line-height: 110%;
+    }
+
+    .back-section {
+        gap:  8px;
+        justify-content: end;
+
+        .price {
+            font-weight: 600;
+
+            span {
+                display: block;
+                text-align: center;
+            }
+        }
+
+        button {
+            width: 30px;
+            height: 30px;
+            border: none;
+            border-radius: 8px;
+            position: relative;
+
+            div {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                width: 2px;
+                height: 18px;
+                border-radius: 8px;
+                background-color: black;
+                transform-origin: center;
+            }
+
+            div:nth-child(1) {
+                transform: translate(-50%, -50%) rotate(90deg) ;
+            }
+
+            div:nth-child(2) {
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+}
+
+// school
+.school_box {
+    background-color: lightcoral;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    border-radius: 50px;
+    display: grid;
+
+    p {
+        text-align: center;
+        font-size: rem(18);
+    }
+
+    h2 {
+        font-family: 'Luckiest Guy', sans-serif;
+        font-size: clamp(2.5rem, 1.9rem + 2.56vw, 3.5rem);
+        width: fit-content;
+        margin: 0 auto;
+        font-weight: 500;
+        margin-block-end: 0.5rem;
+    }
+
+    .image-container {
+        max-width: 600px;
+        transform: translateY(35px);
+        margin-block-start: -30px;
+        margin-inline: auto;
+        position: relative;
+    }
+
+    .baker-name {
+        position: absolute;
+        top: 40%;
+        left: 0;
+        color: white;
+        transform-origin: center;
+        transform: rotate(-45deg);
+        font-weight: 600;
+    }
+
+    a {
+        position: absolute;
+        font-weight: 600;
+        font-size: rem(18);
+        bottom: 32px;
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 0.5rem 1.5rem;
+        background-color: lightgreen;
+        border-radius: 2rem;
+    }
+}
+
+// everyday
+.everyday_box {
+    background-color: lightseagreen;
+    border-radius: 50px;
+    padding: 2rem;
+    display: grid;
+    align-items: start;
+
+    h2 {
+        font-size: clamp(2.5rem, 1.9rem + 2.56vw, 3.5rem);
+        font-family: "Luckiest Guy", sans-serif;
+        font-weight: 500;
+        width: fit-content;
+        margin: 0 auto;
+    }
+
+    .image-container {
+        position: relative;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .price {
+        background-color: $dark-brown;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        bottom: 5%;
+        right: 5%;
+
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        
+        p {
+            font-size: rem(24);
+            font-weight: 600;
+            color: $dark-cream;
+        }
+    }
+
+    p {
+        text-align: center;
+        font-size: rem(18);
+    }
+}

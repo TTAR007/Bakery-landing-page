@@ -1,0 +1,74 @@
+@use '../variables' as *;
+@use '../functions' as *;
+
+nav {
+    z-index: 999;
+    background-color: $white-smoke;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: rem(200);
+    padding: 32px;
+    box-shadow: 10px 0 20px rgba(0, 0, 0, 0.3);
+    // display: none;
+
+    // close button
+    .close-button_box {
+        border-radius: 50%;
+        background-color: $light-cream;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 56px;
+        margin-inline-start: auto;
+
+        div {
+            width: 4px;
+            height: 28px;
+            background-color: black;
+            transform-origin: center;
+            border-radius: 4px;
+        }
+
+        div:nth-child(1) {
+            transform: translateY(50%) rotate(45deg);
+        }
+        div:nth-child(2) {
+            transform: translateY(-50%) rotate(-45deg);
+        }
+    }
+
+    .close-button_box:hover {
+        cursor: pointer;
+        background-color: $dark-cream;
+
+        div {
+            background-color: $light-cream;
+        }
+    }
+
+    // list items
+    ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        align-items: end;
+        margin-block-start: 2rem;
+
+        a {
+            font-size: rem(24);
+            font-weight: 500;
+            color: black;
+            padding: 4px 8px;
+            border-radius: 16px;
+        }
+
+        a:hover {
+            background-color: $dark-brown;
+            color: $light-cream;
+            text-decoration: underline;
+        }
+    }
+}
