@@ -2,7 +2,7 @@
 @use '../functions' as *;
 
 nav {
-    // overflow-y: auto;
+    overflow-y: scroll;
     z-index: 999;
     background-color: $white-smoke;
     position: fixed;
