@@ -121,6 +121,7 @@ header button:hover {
 }
 
 nav {
+  overflow-y: scroll;
   z-index: 999;
   background-color: #F8EDE3;
   position: fixed;
