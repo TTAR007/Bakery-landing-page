@@ -2,7 +2,7 @@
 @use '../functions' as *;
 
 nav {
-    overflow-y: scroll;
+    overflow-y: auto;
     z-index: 999;
     background-color: $white-smoke;
     position: fixed;
@@ -64,6 +64,7 @@ nav {
             color: black;
             padding: 4px 8px;
             border-radius: 16px;
+            display: block;
         }
 
         a:hover {

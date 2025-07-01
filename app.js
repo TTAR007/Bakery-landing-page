@@ -36,3 +36,11 @@ cookies.addEventListener('click', () => {
     matchaTxt.classList.remove('show-matcha-name')
     cookiesTxt.classList.remove('undisplay-cookies-name')
 })
+
+//cart
+const cartNum = document.getElementById("cart-number");
+let count = 0;
+
+function addCart() {
+    cartNum.textContent = ++count;
+}

@@ -121,7 +121,7 @@ header button:hover {
 }
 
 nav {
-  overflow-y: scroll;
+  overflow-y: auto;
   z-index: 999;
   background-color: #F8EDE3;
   position: fixed;
@@ -176,6 +176,7 @@ nav ul a {
   color: black;
   padding: 4px 8px;
   border-radius: 16px;
+  display: block;
 }
 nav ul a:hover {
   background-color: #6F4E37;
