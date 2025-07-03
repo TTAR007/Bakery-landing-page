@@ -40,6 +40,12 @@ cookies.addEventListener('click', () => {
 
 //Add food to cart
 
+// addfood and also display at the same time
+function addFood(food) {
+    addCart(food);
+    displayCart();
+}
+
 //menu array
 const foodArray = [
     {id: 1, menuName: "Matcha Cream Bun", price: 3.59, quantity: 0},
@@ -60,9 +66,10 @@ function addCart(food) {
     let found = false;
     let foodIndex; // use for indicate where to add quantity
 
+
     for (let i = 0; i < foodArray.length; i++) {
         // current food that is in our store.
-        let currentFood = foodArray[i];
+        let currentFood = {...foodArray[i]};
 
         if (currentFood.menuName === myNewFood) {
             //can add
@@ -72,7 +79,7 @@ function addCart(food) {
                 currentFood.quantity++;
                 cartArray[cartArray.length] = currentFood;
                 cartSize++;
-                console.log("add new food");
+                console.log("add new food (size0)");
                 break;
             }
 
@@ -88,15 +95,83 @@ function addCart(food) {
 
             if (found) { // increase just quantity
                 cartArray[foodIndex].quantity++;
+                cartSize++;
                 console.log("increase quantity");
                 break;
             } else { //add new food to cartArray
-                currentFood.quantity += 1;
+                currentFood.quantity++;
                 cartArray[cartArray.length] = currentFood;
                 cartSize++;
                 console.log("add new food");
                 break;
             }
         }
+    }    
+
+    console.log(cartSize);
+}
+
+//display cart
+const cartBox = document.getElementById("cart_box");
+
+function displayCart() {
+    cartBox.innerHTML = "<div class='close-button_box'>" + "<div></div>" + "<div></div>" + "</div>";
+    if (cartArray.length === 0) {
+        cartBox.innerHTML += "<p>" + "Empty cart." + "</p>";
+        return;
     }
+    
+    cartBox.innerHTML += "<p class='title'>" + "Your cart" + "</p>";
+
+    let sumPrice = 0;
+    for (let i = 0; i < cartArray.length; i++) {
+        let endPrice = calPrice(cartArray[i]);
+
+        cartBox.innerHTML += `<div class='menu-text'>
+        <p>${cartArray[i].menuName}</p>
+        <p class='quantity-number'>${cartArray[i].quantity}</p>
+        <p>$${endPrice}</p>
+        <button class='remove-btn' data-name='${cartArray[i].menuName}' data-quantity='${cartArray[i].quantity}' onclick='deleteFood(this)'>
+        <div></div>
+        </button>
+        </div>
+        `
+        sumPrice += endPrice;
+    }
+    let roundPrice = Math.floor(sumPrice * 100) / 100;
+    cartBox.innerHTML += "<p class='total-price'>" + "Total price: " + "<span>" + "$" + roundPrice + "</span>" + "</p>";
+    cartBox.innerHTML += "<button class='confirm-btn'>" + "Confirm" + "</button>";    
+}
+
+//cal total price
+function calPrice(food) {
+    return Math.floor((food.price * food.quantity) * 100) / 100;
+}
+
+//delete food
+function deleteFood(food) {
+    // the name of the menu from "data-name" attribute in button
+    let foodToDelete = food.getAttribute("data-name");
+
+    //loop through the cardArray to find the match menuName
+    for (let i = 0; i < cartArray.length; i++) {
+        if (foodToDelete === cartArray[i].menuName) {
+
+            //if quantity is 1. delete that obj
+            if (cartArray[i].quantity <= 1) {
+                cartArray.splice(i, 1);
+                cartSize--;
+                break;
+            }
+
+            // if it's more than 1, decrease quantity by 1
+            cartArray[i].quantity--;
+            cartSize--;
+            break;
+        }
+    }
+
+    cartNum.textContent = --count;
+    displayCart();
+    console.log(cartArray);
 }

@@ -68,7 +68,7 @@ header {
   flex-wrap: wrap;
   gap: 12px;
 }
-header button {
+header .cart-btn {
   padding: 0.8rem;
   border: none;
   border-radius: 80% 10px 80% 10px;
@@ -78,7 +78,7 @@ header button {
   background-color: #6F4E37;
   color: #FED8B1;
 }
-header button p {
+header .cart-btn p {
   font-family: "M PLUS Rounded 1c", sans-serif;
   border-radius: 50%;
   padding: 2px;
@@ -90,7 +90,7 @@ header button p {
   top: -8px;
   right: 0;
 }
-header button:hover {
+header .cart-btn:hover {
   color: #6F4E37;
   background-color: #ECB176;
   cursor: pointer;
@@ -186,6 +186,114 @@ nav ul a:hover {
 
 .open {
   display: block;
+}
+
+#cart_box {
+  min-width: 290px;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #FED8B1;
+  padding: 20px;
+  text-align: center;
+  border-radius: 32px;
+  box-shadow: 0 0 24px rgb(83, 48, 8);
+}
+#cart_box p {
+  font-size: 1.125rem;
+}
+#cart_box .close-button_box {
+  border-radius: 50%;
+  background-color: #ECB176;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 56px;
+  margin-inline-start: auto;
+}
+#cart_box .close-button_box div {
+  width: 4px;
+  height: 28px;
+  background-color: black;
+  transform-origin: center;
+  border-radius: 4px;
+}
+#cart_box .close-button_box div:nth-child(1) {
+  transform: translateY(50%) rotate(45deg);
+}
+#cart_box .close-button_box div:nth-child(2) {
+  transform: translateY(-50%) rotate(-45deg);
+}
+#cart_box .close-button_box:hover {
+  cursor: pointer;
+  background-color: #6F4E37;
+}
+#cart_box .close-button_box:hover div {
+  background-color: #FED8B1;
+}
+#cart_box .title {
+  font-weight: 900;
+  font-size: 1.5rem;
+}
+#cart_box .menu-text {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 1px solid #000;
+  margin-block: 20px;
+}
+#cart_box .menu-text .quantity-number {
+  font-weight: bold;
+}
+#cart_box .menu-text .remove-btn {
+  width: 24px;
+  height: 24px;
+  position: relative;
+  border: none;
+  border-radius: 8px;
+}
+#cart_box .menu-text .remove-btn div {
+  position: absolute;
+  transform-origin: center;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(90deg);
+  width: 3px;
+  height: 16px;
+  background-color: red;
+  border-radius: 4px;
+}
+#cart_box .menu-text button:hover {
+  background-color: red;
+  cursor: pointer;
+}
+#cart_box .menu-text button:hover div {
+  background-color: white;
+}
+#cart_box .total-price span {
+  text-decoration: underline;
+  font-weight: bold;
+}
+#cart_box .confirm-btn {
+  margin-block: 1rem;
+  border: none;
+  background-color: green;
+  padding: 0.5rem 2rem;
+  border-radius: 8px;
+  color: white;
+  font-size: 1.125rem;
+  transition: background-color 150ms;
+  font-family: "M PLUS Rounded 1c", sans-serif;
+}
+#cart_box .confirm-btn:hover {
+  background-color: white;
+  color: green;
+  cursor: pointer;
+}
+#cart_box .confirm-btn:active {
+  background-color: rgb(3, 76, 25);
 }
 
 .cookies_box {

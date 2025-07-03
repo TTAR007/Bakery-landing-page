@@ -38,10 +38,11 @@
                     <li><a href="#">Contact</a></li>
                 </ul>
             </nav>
-            <button type="button">
+            <button class="cart-btn" type="button" onclick="displayCart()">
                 Cart
                 <p id="cart-number">0</p>
             </button>
+            <div id="cart_box"></div>
         </header>
 
         <article class="cards-grid">
@@ -79,7 +80,7 @@
                         </p>
                         <div class="back-section">
                             <p class="price">$3.59 <span>each</span></p>
-                            <button type="button" data-name="Matcha Cream Bun" onclick="addCart(this)">
+                            <button type="button" data-name="Matcha Cream Bun" onclick="addFood(this)">
                                 <div></div>
                                 <div></div>
                             </button>
@@ -96,7 +97,7 @@
                         </p>
                         <div class="back-section">
                             <p class="price">$3.59 <span>each</span></p>
-                            <button type="button" data-name="Red Bean Bun" onclick="addCart(this)">
+                            <button type="button" data-name="Red Bean Bun" onclick="addFood(this)">
                                 <div></div>
                                 <div></div>
                             </button>

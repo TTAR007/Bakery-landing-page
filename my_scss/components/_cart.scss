@@ -1,0 +1,129 @@
+@use '../variables' as *;
+@use '../functions' as *;
+
+#cart_box {
+    min-width: 290px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: $light-cream;
+    padding: 20px;
+    text-align: center;
+    border-radius: 32px;
+    box-shadow: 0 0 24px rgb(83, 48, 8);
+
+    p {
+        font-size: rem(18);
+    }
+
+    .close-button_box {
+        border-radius: 50%;
+        background-color: $dark-cream;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 56px;
+        margin-inline-start: auto;
+
+        div {
+            width: 4px;
+            height: 28px;
+            background-color: black;
+            transform-origin: center;
+            border-radius: 4px;
+        }
+
+        div:nth-child(1) {
+            transform: translateY(50%) rotate(45deg);
+        }
+        div:nth-child(2) {
+            transform: translateY(-50%) rotate(-45deg);
+        }
+    }
+
+    .close-button_box:hover {
+        cursor: pointer;
+        background-color: $dark-brown;
+
+        div {
+            background-color: $light-cream;
+        }
+    }
+
+    .title {
+        font-weight: 900;
+        font-size: rem(24);
+    }
+
+    .menu-text {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 20px;
+        border-bottom: 1px solid #000;
+        margin-block: 20px;
+
+        .quantity-number {
+            font-weight: bold;
+        }
+
+        .remove-btn {
+            width: 24px;
+            height: 24px;
+            position: relative;
+            border: none;
+            border-radius: 8px;
+
+            div {
+                position: absolute;
+                transform-origin: center;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%) rotate(90deg);
+                width: 3px;
+                height: 16px;
+                background-color: red;
+                border-radius: 4px;
+            }
+        }
+
+        button:hover {
+            background-color: red;
+            cursor: pointer;
+
+            div {
+                background-color: white;
+            }
+        }
+    }
+
+    .total-price {
+        span {
+            text-decoration: underline;
+            font-weight: bold;
+        }
+    }
+
+    .confirm-btn {
+        margin-block: 1rem;
+        border: none;
+        background-color: green;    
+        padding: 0.5rem 2rem;
+        border-radius: 8px;
+        color: white;
+        font-size: 1.125rem;
+        transition: background-color 150ms;
+        font-family: 'M PLUS Rounded 1c', sans-serif;
+    }
+
+    .confirm-btn:hover {
+        background-color: white;
+        color: green;
+        cursor: pointer;
+    }
+
+    .confirm-btn:active {
+        background-color: rgb(3, 76, 25);
+    }
+}   

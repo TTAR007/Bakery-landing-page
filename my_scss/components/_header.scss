@@ -16,7 +16,7 @@ header {
     flex-wrap: wrap;
     gap: 12px;
 
-    button {
+    .cart-btn {
         padding: 0.8rem;
         border: none;
         border-radius: 80% 10px 80% 10px;
@@ -40,7 +40,7 @@ header {
         }
     }
 
-    button:hover {
+    .cart-btn:hover {
         color: $dark-brown;
         background-color: $dark-cream;
         cursor: pointer;
