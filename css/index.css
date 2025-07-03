@@ -253,6 +253,7 @@ nav ul a:hover {
   position: relative;
   border: none;
   border-radius: 8px;
+  background-color: white;
 }
 #cart_box .menu-text .remove-btn div {
   position: absolute;
