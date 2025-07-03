@@ -39,12 +39,15 @@ cookies.addEventListener('click', () => {
 
 
 //Add food to cart
+// reflect my ideas after finished
+/* 
+1. store default menu in "foodArray"
+2. "cartArrat" to store user's menu
+3. create add food function to cart
+4. create display() to display the food's name, quantity etc. (in "cartArray") to user
+5. add delete food function
+*/
 
-// addfood and also display at the same time
-function addFood(food) {
-    addCart(food);
-    displayCart();
-}
 
 //menu array
 const foodArray = [
@@ -68,7 +71,7 @@ function addCart(food) {
 
     for (let i = 0; i < foodArray.length; i++) {
         // current food that is in our store.
-        let currentFood = {...foodArray[i]};
+        let currentFood = {...foodArray[i]}; //copy
 
         if (currentFood.menuName === myNewFood) {
             //can add
@@ -96,6 +99,7 @@ function addCart(food) {
         }
     }
     cartNum.textContent = updateCartNumber();
+    displayCart();
 }
 
 //display cart
