@@ -17,7 +17,7 @@
         font-size: rem(18);
     }
 
-    .close-button_box {
+    .cart-close-btn {
         border-radius: 50%;
         background-color: $dark-cream;
         display: flex;
@@ -42,7 +42,7 @@
         }
     }
 
-    .close-button_box:hover {
+    .cart-close-btn:hover {
         cursor: pointer;
         background-color: $dark-brown;
 
@@ -126,4 +126,12 @@
     .confirm-btn:active {
         background-color: rgb(3, 76, 25);
     }
-}   
+}
+
+.close-cart {
+    display: none;
+}
+
+.open-cart {
+    display: block;
+}

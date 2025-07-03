@@ -53,13 +53,12 @@ const foodArray = [
 ]
 
 let cartArray = [];
-let cartSize = 0;
 
 const cartNum = document.getElementById("cart-number");
 let count = 0;
 
 function addCart(food) {
-    cartNum.textContent = ++count;
+    // cartNum.textContent = ++count; we use updateCart instead
 
     let myNewFood = food.getAttribute("data-name"); //get that name of the menu from html button
 
@@ -75,11 +74,10 @@ function addCart(food) {
             //can add
 
             // if size == 0
-            if (cartSize === 0) {
+            if (cartArray.length === 0) {
                 currentFood.quantity++;
                 cartArray[cartArray.length] = currentFood;
-                cartSize++;
-                console.log("add new food (size0)");
+                // console.log("add new food (size0)");
                 break;
             }
 
@@ -95,27 +93,32 @@ function addCart(food) {
 
             if (found) { // increase just quantity
                 cartArray[foodIndex].quantity++;
-                cartSize++;
-                console.log("increase quantity");
+                // console.log("increase quantity");
                 break;
             } else { //add new food to cartArray
                 currentFood.quantity++;
                 cartArray[cartArray.length] = currentFood;
-                cartSize++;
-                console.log("add new food");
+                // console.log("add new food");
                 break;
             }
         }
-    }    
-
-    console.log(cartSize);
+    }
+    cartNum.textContent = updateCartNumber();
 }
 
 //display cart
 const cartBox = document.getElementById("cart_box");
 
+// Open cart
+const cartBtn = document.querySelector('.cart-btn'); //get cart-btn from html
+cartBtn.addEventListener('click', () => {
+    cartBox.classList.add('open-cart');
+    displayCart();
+})
+
+
 function displayCart() {
-    cartBox.innerHTML = "<div class='close-button_box'>" + "<div></div>" + "<div></div>" + "</div>";
+    cartBox.innerHTML = "<div class='cart-close-btn' onclick='closeCart()'>" + "<div></div>" + "<div></div>" + "</div>";
     if (cartArray.length === 0) {
         cartBox.innerHTML += "<p>" + "Empty cart." + "</p>";
         return;
@@ -140,7 +143,12 @@ function displayCart() {
     }
     let roundPrice = Math.floor(sumPrice * 100) / 100;
     cartBox.innerHTML += "<p class='total-price'>" + "Total price: " + "<span>" + "$" + roundPrice + "</span>" + "</p>";
-    cartBox.innerHTML += "<button class='confirm-btn'>" + "Confirm" + "</button>";    
+    cartBox.innerHTML += "<button class='confirm-btn'>" + "Confirm" + "</button>";
+}
+
+// function to close cart
+function closeCart() {
+    cartBox.classList.remove('open-cart');
 }
 
 //cal total price
@@ -160,18 +168,27 @@ function deleteFood(food) {
             //if quantity is 1. delete that obj
             if (cartArray[i].quantity <= 1) {
                 cartArray.splice(i, 1);
-                cartSize--;
                 break;
             }
 
             // if it's more than 1, decrease quantity by 1
             cartArray[i].quantity--;
-            cartSize--;
             break;
         }
     }
 
-    cartNum.textContent = --count;
+    // cartNum.textContent = --count;
+    cartNum.textContent = updateCartNumber();
     displayCart();
-    console.log(cartArray);
+}
+
+//update cart munber instedof using ++count;
+function updateCartNumber() {
+    let total = 0;
+
+    for (let i = 0; i < cartArray.length; i++) {
+        total += cartArray[i].quantity;
+    }
+
+    return total;
 }

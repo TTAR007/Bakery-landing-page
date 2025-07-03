@@ -203,7 +203,7 @@ nav ul a:hover {
 #cart_box p {
   font-size: 1.125rem;
 }
-#cart_box .close-button_box {
+#cart_box .cart-close-btn {
   border-radius: 50%;
   background-color: #ECB176;
   display: flex;
@@ -212,24 +212,24 @@ nav ul a:hover {
   width: 56px;
   margin-inline-start: auto;
 }
-#cart_box .close-button_box div {
+#cart_box .cart-close-btn div {
   width: 4px;
   height: 28px;
   background-color: black;
   transform-origin: center;
   border-radius: 4px;
 }
-#cart_box .close-button_box div:nth-child(1) {
+#cart_box .cart-close-btn div:nth-child(1) {
   transform: translateY(50%) rotate(45deg);
 }
-#cart_box .close-button_box div:nth-child(2) {
+#cart_box .cart-close-btn div:nth-child(2) {
   transform: translateY(-50%) rotate(-45deg);
 }
-#cart_box .close-button_box:hover {
+#cart_box .cart-close-btn:hover {
   cursor: pointer;
   background-color: #6F4E37;
 }
-#cart_box .close-button_box:hover div {
+#cart_box .cart-close-btn:hover div {
   background-color: #FED8B1;
 }
 #cart_box .title {
@@ -294,6 +294,14 @@ nav ul a:hover {
 }
 #cart_box .confirm-btn:active {
   background-color: rgb(3, 76, 25);
+}
+
+.close-cart {
+  display: none;
+}
+
+.open-cart {
+  display: block;
 }
 
 .cookies_box {
