@@ -73,14 +73,6 @@ function addCart(food) {
         if (currentFood.menuName === myNewFood) {
             //can add
 
-            // if size == 0
-            if (cartArray.length === 0) {
-                currentFood.quantity++;
-                cartArray[cartArray.length] = currentFood;
-                // console.log("add new food (size0)");
-                break;
-            }
-
             // if size is not 0
             //before adding, we have to check Is it already store in my cart?
             for (let j = 0; j < cartArray.length; j++) {
